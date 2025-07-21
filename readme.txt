@@ -1,7 +1,7 @@
 Dự đoán Khách hàng Rời bỏ Dịch vụ (Customer Churn Prediction)
 Mô phỏng hệ thống thu thập và xử lý dữ liệu theo thời gian thực để huấn luyện mô hình học máy. Hệ thống có khả năng dự đoán liệu một khách hàng có rời bỏ dịch vụ (churn) hay không dựa trên thông tin sử dụng của họ.
 
-Dự án này được xây dựng theo mô hình Producer-Consumer, trong đó một server chịu trách nhiệm gửi dữ liệu liên tục và một server khác nhận, xử lý và huấn luyện mô hình. Cụ thể:
+Được xây dựng theo mô hình Producer-Consumer, trong đó một server chịu trách nhiệm gửi dữ liệu liên tục và một server khác nhận, xử lý và huấn luyện mô hình. Cụ thể:
 - producer.py: Giả lập một nguồn dữ liệu, liên tục đọc thông tin khách hàng từ file CSV và gửi đến Consumer qua API.
 - consumer.py: Một server web xây dựng bằng Flask, có khả năng nhận dữ liệu, lưu vào bộ đệm (buffer).
 - Tự động Huấn luyện: Khi bộ đệm đạt đến một ngưỡng dữ liệu nhất định (ví dụ: 50 mẫu), Consumer sẽ tự động tiền xử lý dữ liệu và huấn luyện một mô hình học máy (Random Forest).
